@@ -18,7 +18,7 @@ const QuizView = () => {
     }));
     const shuffledData = shuffle(decodedData);
 
-    return (<QuizPage shuffledData={shuffledData} />)
+    return (<QuizPage shuffledData={shuffledData as QuizDataInterface[]} />)
 }
 
 export default QuizView;
