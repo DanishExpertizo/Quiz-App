@@ -44,7 +44,7 @@ export interface ProgressBarInterface {
 export interface NextBtnInterface {
     isSelected: boolean;
     isLastQue: boolean;
-    nextQuestion: ()=> void;
+    nextQuestion: () => void;
     setSubmit: Dispatch<SetStateAction<boolean>>;
 }
 
@@ -75,5 +75,5 @@ export interface RenderOptionsInterface {
 export interface ProgressBarBoxInterface {
     left: number;
     width: number;
-    color: number | string;
+    color: string;
 }
