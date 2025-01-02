@@ -18,7 +18,7 @@ const ShuffleOptions = ({ isSelected, data, activeQue, answers, setCurrentScore,
 
             const resOptions = shuffle(combinedOptions);
 
-            setShuffledOptions(resOptions);
+            setShuffledOptions(resOptions as string[]);
         }
     }, [data, activeQue]);
 

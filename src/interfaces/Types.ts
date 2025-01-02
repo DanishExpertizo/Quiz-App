@@ -44,7 +44,7 @@ export interface ProgressBarInterface {
 export interface NextBtnInterface {
     isSelected: boolean;
     isLastQue: boolean;
-    nextQuestion: any;
+    nextQuestion: ()=> void;
     setSubmit: Dispatch<SetStateAction<boolean>>;
 }
 
@@ -66,7 +66,7 @@ export interface ShuffledOptionsInterface {
 export interface RenderOptionsInterface {
     shuffledOptions: string[];
     isSelected: boolean;
-    checkAnswer: any;
+    checkAnswer: (selected: string) => void;
     activeQue: number;
     selectedAns: string;
     data: QuizDataInterface[];

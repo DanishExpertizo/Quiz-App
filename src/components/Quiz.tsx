@@ -18,7 +18,7 @@ const Quiz = ({ data, answers, setAnswers, setSubmit }: QuizInterface) => {
     const [progress, setProgress] = useState<number>(0);
     const [isLastQue, setIsLastQue] = useState<boolean>(false);
 
-    const nextQuestion = () => {
+    const nextQuestion: () => void = () => {
         setActiveQue(activeQue + 1);
         setIsCorrect(false);
         setIsSelected(false);

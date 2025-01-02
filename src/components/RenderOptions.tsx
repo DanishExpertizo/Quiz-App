@@ -6,8 +6,8 @@ const RenderOptions = ({ shuffledOptions, isSelected, checkAnswer, activeQue, se
             {
                 shuffledOptions?.map((item: string, index: number) => {
                     return (
-                        <div>
-                            <button key={index} onClick={() => checkAnswer(item)} disabled={isSelected} className={`border border-gray-400 text-white rounded-lg h-12 bg-blue-500 min-w-60 px-2 hover:scale-105 transition-all my-5 ${isSelected && 'hover:transform-none bg cursor-not-allowed bg-blue-300'} ${isSelected && (item === selectedAns
+                        <div key={index}>
+                            <button onClick={() => checkAnswer(item)} disabled={isSelected} className={`border border-gray-400 text-white rounded-lg h-12 bg-blue-500 min-w-60 px-2 hover:scale-105 transition-all my-5 ${isSelected && 'hover:transform-none bg cursor-not-allowed bg-blue-300'} ${isSelected && (item === selectedAns
                                 && (selectedAns === data[activeQue].correct_answer
                                     ? 'bg-green-500 cursor-default'
                                     : 'bg-red-500')

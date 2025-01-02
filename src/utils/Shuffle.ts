@@ -1,9 +1,8 @@
-export default function shuffle(array: any) {
+import { QuizDataInterface } from "@/interfaces/Types";
 
+export default function shuffle(array: QuizDataInterface[] | string[]): QuizDataInterface[] | string[] {
     for (let i = array.length - 1; i > 0; i--) {
-
         const j = Math.floor(Math.random() * (i + 1));
-
         [array[i], array[j]] = [array[j], array[i]];
     }
     return array;
