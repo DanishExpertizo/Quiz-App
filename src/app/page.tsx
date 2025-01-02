@@ -1,9 +1,5 @@
-import StartQuiz from "./views/StartQuizView";
+import StartQuizView from "../views/StartQuizView";
 
 export default function Home() {
-  return (
-    <>
-      <StartQuiz />
-    </>
-  );
+  return (<StartQuizView />);
 }

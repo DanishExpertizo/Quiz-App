@@ -1,11 +1,7 @@
-import Quiz from "../views/QuizView";
+import QuizView from "../../views/QuizView";
 
 const ExpertizoQuiz = () => {
-    return (
-        <>
-            <Quiz />
-        </>
-    )
+    return (<QuizView />)
 }
 
 export default ExpertizoQuiz;
