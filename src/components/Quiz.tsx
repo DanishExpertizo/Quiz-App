@@ -1,13 +1,12 @@
 'use client'
 
-import { Star } from "lucide-react";
+import { StarIcon } from "@/icons/Icons";
 import { useState } from "react";
 import LoadingBar from "react-top-loading-bar";
 import { QuizInterface } from "../interfaces/Types";
 import NextBtn from "./NextBtn";
 import ProgressBar from "./ProgressBar";
 import ShuffleOptions from "./ShuffleOptions";
-import { StarIcon } from "@/icons/Icons";
 
 const Quiz = ({ data, answers, setAnswers, setSubmit }: QuizInterface) => {
     const [activeQue, setActiveQue] = useState<number>(0);
