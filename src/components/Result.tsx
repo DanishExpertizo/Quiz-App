@@ -6,8 +6,8 @@ const Result = ({ answers }: ResultInterface) => {
     const correctAnswers = answers.filter(item => item.isCorrect);
 
     return (
-        <div className="flex items-center justify-center mt-36">
-            <div className="flex flex-col items-center gap-5">
+        <div className="flex items-center justify-center min-h-screen">
+            <div className="flex flex-col items-center justify-center gap-5">
                 <div className="p-6 scale-110">
                     <h1 className="text-[50px] font-semibold mb-4 text-center">Result</h1>
                     {/* <h1 className="text-primary text-lg mb-2">
