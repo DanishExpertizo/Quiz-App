@@ -1,7 +1,7 @@
 import { ChevronRight, RefreshCcw } from "lucide-react";
 
 export const ArrowRightIcon = () => {
-    return <ChevronRight className="group-hover:translate-x-2 transition-transform duration-300" />
+    return <ChevronRight className="group-hover:translate-x-2 transition-all duration-300" />
 }
 
 export const RestartArrowIcon = () => {

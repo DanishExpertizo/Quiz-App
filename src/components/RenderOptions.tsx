@@ -7,11 +7,18 @@ const RenderOptions = ({ shuffledOptions, isSelected, checkAnswer, activeQue, se
                 shuffledOptions?.map((item: string, index: number) => {
                     return (
                         <div key={index}>
-                            <button onClick={() => checkAnswer(item)} disabled={isSelected} className={`border border-gray-400 text-white rounded-lg h-12 bg-blue-500 min-w-60 px-2 hover:scale-105 transition-all my-5 ${isSelected && 'hover:transform-none bg cursor-not-allowed bg-blue-300'} ${isSelected && (item === selectedAns
-                                && (selectedAns === data[activeQue].correct_answer
+                            <button onClick={() => checkAnswer(item)} disabled={isSelected} className={`border border-gray-400 text-white rounded-lg h-12 min-w-60 px-2 transition-all my-5 ${isSelected ? `hover:transform-none cursor-not-allowed bg-black ${item === selectedAns
+                                ? (selectedAns === data[activeQue].correct_answer
                                     ? 'bg-green-500 cursor-default'
                                     : 'bg-red-500')
-                            )}`}>{item}</button>
+                                :
+                                'bg-blue-300 cursor-default'
+                                }`
+                                :
+                                'bg-blue-500 cursor-pointer hover:scale-105'
+                                }`}>
+                                {item}
+                            </button>
                         </div>
                     )
                 })
