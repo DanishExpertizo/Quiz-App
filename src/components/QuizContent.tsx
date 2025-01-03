@@ -4,7 +4,7 @@ import { AnswersInterface, QuizPageInterface } from "../interfaces/Types";
 import Result from "./Result";
 import Quiz from "./Quiz";
 
-const QuizPage = ({ shuffledData }: QuizPageInterface) => {
+const QuizContent = ({ shuffledData }: QuizPageInterface) => {
     const [answers, setAnswers] = useState<AnswersInterface[]>([]);
     const [submit, setSubmit] = useState<boolean>(false);
 
@@ -20,4 +20,4 @@ const QuizPage = ({ shuffledData }: QuizPageInterface) => {
     )
 }
 
-export default QuizPage;
+export default QuizContent;

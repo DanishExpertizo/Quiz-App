@@ -1,7 +1,7 @@
 
 
 import { QuizDataInterface } from "@/interfaces/Types";
-import QuizPage from "../components/QuizPage";
+import QuizContent from "../components/QuizContent";
 import jsonData from '../data/questions.json';
 import shuffle from "../utils/Shuffle";
 
@@ -18,7 +18,7 @@ const QuizView = () => {
     }));
     const shuffledData = shuffle(decodedData);
 
-    return (<QuizPage shuffledData={shuffledData as QuizDataInterface[]} />)
+    return (<QuizContent shuffledData={shuffledData as QuizDataInterface[]} />)
 }
 
 export default QuizView;

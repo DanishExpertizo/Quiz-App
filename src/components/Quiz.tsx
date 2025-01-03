@@ -44,7 +44,7 @@ const Quiz = ({ data, answers, setAnswers, setSubmit }: QuizInterface) => {
                     <h1>{data[activeQue]?.question}</h1>
                     <ShuffleOptions isSelected={isSelected} data={data} activeQue={activeQue} answers={answers} setCurrentScore={setCurrentScore} setMaxScore={setMaxScore} setProgress={setProgress} setMinScore={setMinScore} setIsLastQue={setIsLastQue} setIsSelected={setIsSelected} setAnswers={setAnswers} setIsCorrect={setIsCorrect} />
                 </div>
-                <h1 className="text-center text-[32px] w-full">{isSelected && (isCorrect ? <span className="text-green-500">Correct!!</span> : <span className="text-red-500">Sorry!</span>)}
+                <h1 className="text-center text-[32px] w-full">{isSelected && (isCorrect ? <span className="text-green-500">Correct!</span> : <span className="text-red-500">Sorry!</span>)}
                 </h1>
                 <NextBtn isSelected={isSelected} isLastQue={isLastQue} nextQuestion={nextQuestion} setSubmit={setSubmit} />
             </div>
