@@ -4,6 +4,11 @@ export interface QuizOptionsStateInterface {
     options: string;
 }
 
+export interface StarIconInterface {
+    difficulty?: string;
+    index: number;
+}
+
 export interface QuizDataInterface {
     category: string;
     type: string;
@@ -67,9 +72,8 @@ export interface RenderOptionsInterface {
     shuffledOptions: string[];
     isSelected: boolean;
     checkAnswer: (selected: string) => void;
-    activeQue: number;
     selectedAns: string;
-    data: QuizDataInterface[];
+    correctAns: string;
 }
 
 export interface ProgressBarBoxInterface {

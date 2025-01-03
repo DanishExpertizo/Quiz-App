@@ -7,6 +7,7 @@ import { QuizInterface } from "../interfaces/Types";
 import NextBtn from "./NextBtn";
 import ProgressBar from "./ProgressBar";
 import ShuffleOptions from "./ShuffleOptions";
+import { StarIcon } from "@/icons/Icons";
 
 const Quiz = ({ data, answers, setAnswers, setSubmit }: QuizInterface) => {
     const [activeQue, setActiveQue] = useState<number>(0);
@@ -26,6 +27,21 @@ const Quiz = ({ data, answers, setAnswers, setSubmit }: QuizInterface) => {
 
     const renderStars = data[activeQue]?.difficulty;
 
+    const shuffleOptionsProps = {
+        isSelected,
+        data,
+        activeQue,
+        answers,
+        setCurrentScore,
+        setMaxScore,
+        setProgress,
+        setMinScore,
+        setIsLastQue,
+        setIsSelected,
+        setAnswers,
+        setIsCorrect,
+    };
+
     return (
         <div className="flex items-center justify-center min-h-screen relative container mx-auto">
             <LoadingBar className='py-3' color="#a1a1a1" progress={progress} onLoaderFinished={() => setProgress(100)}
@@ -38,12 +54,12 @@ const Quiz = ({ data, answers, setAnswers, setSubmit }: QuizInterface) => {
                         <h1 className="text-[32px] font-semibold">Question <span>{activeQue + 1}</span> of <span>{data.length}</span></h1>
                         <h3 className="text-gray-700">{data[activeQue]?.category}</h3>
                         <div className="flex mb-5">
-                            <Star className={`h-3 w-3 fill-current`} />
-                            <Star className={`h-3 w-3 ${(renderStars === 'medium' || renderStars === 'hard') && 'fill-current'}`} />
-                            <Star className={`h-3 w-3 ${renderStars === 'hard' && 'fill-current'}`} />
+                            {[...Array(3)].map((_, index) => (
+                                <StarIcon key={index} difficulty={renderStars} index={index} />
+                            ))}
                         </div>
                         <h1>{data[activeQue]?.question}</h1>
-                        <ShuffleOptions isSelected={isSelected} data={data} activeQue={activeQue} answers={answers} setCurrentScore={setCurrentScore} setMaxScore={setMaxScore} setProgress={setProgress} setMinScore={setMinScore} setIsLastQue={setIsLastQue} setIsSelected={setIsSelected} setAnswers={setAnswers} setIsCorrect={setIsCorrect} />
+                        <ShuffleOptions {...shuffleOptionsProps} />
                     </div>
                 </div>
                 <div className="h-48">

@@ -4,11 +4,14 @@ import { useEffect, useState } from "react";
 import RenderOptions from "./RenderOptions";
 import Loader from "./loader/Loader";
 
-const ShuffleOptions = ({ isSelected, data, activeQue, answers, setCurrentScore, setMaxScore, setProgress, setMinScore, setIsLastQue, setIsSelected, setAnswers, setIsCorrect }: ShuffledOptionsInterface) => {
+const ShuffleOptions = (props: ShuffledOptionsInterface) => {
+
+    const { isSelected, data, activeQue, answers, setCurrentScore, setMaxScore, setProgress, setMinScore, setIsLastQue, setIsSelected, setAnswers, setIsCorrect } = props;
 
     const [selectedAns, setSelectedAns] = useState<string>('');
     const [shuffledOptions, setShuffledOptions] = useState<string[]>(['']);
     const [loading, setLoading] = useState<boolean>(true);
+
 
     useEffect(() => {
         if (data && data[activeQue]) {
@@ -63,7 +66,7 @@ const ShuffleOptions = ({ isSelected, data, activeQue, answers, setCurrentScore,
 
     return (
         <>
-            <RenderOptions shuffledOptions={shuffledOptions} isSelected={isSelected} checkAnswer={checkAnswer} activeQue={activeQue} selectedAns={selectedAns} data={data} />
+            <RenderOptions shuffledOptions={shuffledOptions} isSelected={isSelected} checkAnswer={checkAnswer} selectedAns={selectedAns} correctAns={data[activeQue].correct_answer} />
         </>
     )
 }
