@@ -24,7 +24,7 @@ const Quiz = ({ data, answers, setAnswers, setSubmit }: QuizInterface) => {
         setIsSelected(false);
     }
 
-    const renderStars = data[activeQue]?.difficulty;
+    const difficulty = data[activeQue]?.difficulty;
 
     const shuffleOptionsProps = {
         isSelected,
@@ -53,9 +53,13 @@ const Quiz = ({ data, answers, setAnswers, setSubmit }: QuizInterface) => {
                         <h1 className="text-[32px] font-semibold">Question <span>{activeQue + 1}</span> of <span>{data.length}</span></h1>
                         <h3 className="text-gray-700">{data[activeQue]?.category}</h3>
                         <div className="flex mb-5">
-                            {[...Array(3)].map((_, index) => (
-                                <StarIcon key={index} difficulty={renderStars} index={index} />
-                            ))}
+                            {[...Array(3)].map((_, index) => {
+                                const isFilled =
+                                    difficulty === 'easy' && index === 0 ||
+                                    difficulty === 'medium' && (index === 0 || index === 1) ||
+                                    difficulty === 'hard';
+                                return (<StarIcon key={index} className={`h-3 w-3 ${isFilled ? 'fill-black' : ''}`} />);
+                            })}
                         </div>
                         <h1>{data[activeQue]?.question}</h1>
                         <ShuffleOptions {...shuffleOptionsProps} />

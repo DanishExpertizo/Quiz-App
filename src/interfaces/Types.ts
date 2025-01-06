@@ -4,9 +4,8 @@ export interface QuizOptionsStateInterface {
     options: string;
 }
 
-export interface StarIconInterface {
-    difficulty?: string;
-    index: number;
+export interface IconInterface {
+    className?: string;
 }
 
 export interface QuizDataInterface {
