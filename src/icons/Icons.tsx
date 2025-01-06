@@ -9,11 +9,11 @@ export const RestartArrowIcon = () => {
     return <RefreshCcw className="h-5 w-5" />
 }
 
-export const StarIcon = ({ difficulty = 'easy', index }: StarIconInterface) => {
+export const StarIcon = ({ difficulty, index }: StarIconInterface) => {
     const isFilled =
         difficulty === 'easy' && index === 0 ||
         difficulty === 'medium' && (index === 0 || index === 1) ||
         difficulty === 'hard';
 
-    return <Star className={`h-3 w-3 ${isFilled ? 'fill-current' : ''}`} />;
+    return <Star className={`h-3 w-3 ${isFilled ? 'fill-black' : ''}`} />;
 };

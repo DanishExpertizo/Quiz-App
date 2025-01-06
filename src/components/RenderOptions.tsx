@@ -1,8 +1,8 @@
 import { RenderOptionsInterface } from "@/interfaces/Types";
 
 const RenderOptions = ({ shuffledOptions, isSelected, checkAnswer, selectedAns, correctAns }: RenderOptionsInterface) => {
-    const correctAnswer = correctAns;
-    const isCorrectAns = selectedAns === correctAnswer ? 'bg-green-500 cursor-default' : 'bg-red-500';
+
+    const isCorrectAns = selectedAns === correctAns ? 'bg-green-500' : 'bg-red-500';
 
     return (
         <div className="flex justify-center mt-5 items-center min-h-52">
@@ -10,7 +10,7 @@ const RenderOptions = ({ shuffledOptions, isSelected, checkAnswer, selectedAns, 
                 {shuffledOptions?.map((item: string, index: number) => {
                     const isSelectedAnswer = item === selectedAns;
                     const disabledStyles = isSelected
-                        ? `hover:transform-none cursor-not-allowed ${isSelectedAnswer ? isCorrectAns : 'bg-blue-300 cursor-default'}`
+                        ? `hover:transform-none cursor-not-allowed ${isSelectedAnswer ? isCorrectAns : 'bg-blue-300'}`
                         : 'bg-blue-500 cursor-pointer hover:scale-105';
 
                     return (
