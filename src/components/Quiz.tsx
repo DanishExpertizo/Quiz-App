@@ -7,7 +7,6 @@ import { QuizInterface } from "../interfaces/Types";
 import NextBtn from "./NextBtn";
 import ProgressBar from "./ProgressBar";
 import ShuffleOptions from "./ShuffleOptions";
-import { Star } from "lucide-react";
 
 const Quiz = ({ data, answers, setAnswers, setSubmit }: QuizInterface) => {
     const [activeQue, setActiveQue] = useState<number>(0);
