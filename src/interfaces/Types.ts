@@ -80,3 +80,7 @@ export interface ProgressBarBoxInterface {
     width: number;
     color: string;
 }
+
+export interface CheckFilled {
+    [key: string]: number;
+}

@@ -3,7 +3,7 @@
 import { StarIcon } from "@/icons/Icons";
 import { useState } from "react";
 import LoadingBar from "react-top-loading-bar";
-import { QuizInterface } from "../interfaces/Types";
+import { CheckFilled, QuizInterface } from "../interfaces/Types";
 import NextBtn from "./NextBtn";
 import ProgressBar from "./ProgressBar";
 import ShuffleOptions from "./ShuffleOptions";
@@ -25,6 +25,8 @@ const Quiz = ({ data, answers, setAnswers, setSubmit }: QuizInterface) => {
     }
 
     const difficulty = data[activeQue]?.difficulty;
+
+    const checkFilled: CheckFilled = { 'easy': 1, 'medium': 2, 'hard': 3 };
 
     const shuffleOptionsProps = {
         isSelected,
@@ -54,10 +56,7 @@ const Quiz = ({ data, answers, setAnswers, setSubmit }: QuizInterface) => {
                         <h3 className="text-gray-700">{data[activeQue]?.category}</h3>
                         <div className="flex mb-5">
                             {[...Array(3)].map((_, index) => {
-                                const isFilled =
-                                    difficulty === 'easy' && index === 0 ||
-                                    difficulty === 'medium' && (index === 0 || index === 1) ||
-                                    difficulty === 'hard';
+                                const isFilled = index < (checkFilled[difficulty] ?? 0);
                                 return (<StarIcon key={index} className={`h-3 w-3 ${isFilled ? 'fill-black' : ''}`} />);
                             })}
                         </div>
